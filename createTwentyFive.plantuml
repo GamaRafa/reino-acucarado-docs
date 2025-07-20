@@ -1,0 +1,24 @@
+@startuml create25
+title "Anotar Bolo 25 fatias"
+start
+:Escolher massa;
+if (Massa Red Velvet) then (sim)
+  #F5B7B1:adicional de 20.00;
+else (não)
+endif
+:Escolher até 2 recheios;
+if (Algum dos recheios é pistache) then (sim)
+  #F5B7B1:adicional de 24.00;
+else (não)
+endif
+:Escolher até 2 adicionais;
+if (Tem adicional) then (sim)
+  #F5B7B1:adicional de 25.00;
+  if (Tem segundo adicional) then (sim)
+    #F5B7B1:adicional de 25.00;
+  else (não)
+  endif
+else (não)
+endif
+:Preço final é calculado e exibido;
+@enduml

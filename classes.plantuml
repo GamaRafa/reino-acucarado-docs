@@ -1,0 +1,94 @@
+@startuml classes
+left to right direction
+abstract class Cake {
+  dough: Dough
+  fillings: Fillings[]
+  extras: Extras[]
+  slices: int
+  packaging: PackageType
+  aditionalComments: string
+  price: float
+  pickupDate: Date
+  basePrice: float
+  priceModifiers: PriceModifiers
+}
+
+class PriceModifiers <<type>> {
+  redVelvet: number
+  pistachio: number
+  extra: number
+}
+
+'relevant?
+enum PackageType {
+  BOX_AND_CAKEBOARD
+  STYROFOAM
+}
+
+'no need for the Dough class as the logic is goind to be store elswhere
+'check https://chatgpt.com/share/68752f98-8e78-800e-b108-102b30e76c2a
+
+
+enum Dough {
+  VANILLA = "Baunilha",
+  CHOCOLATE = "Chocolate",
+  REDVELVET = "Red Velvet"
+}
+
+enum Fillings {
+  CHOCOLATE_FUDGE = "Brigadeiro"
+  WHITE_FUDGE = "Branquinho"
+  COCONUT_FUDGE = "Beijinho"
+  MILK_CARAMEL = "Doce de leite"
+  CREME_BRULLE = "Creme Brulle"
+  STRAWBERRY_CREAM = "Creme de Morango"
+  LEMON_FUDGE = "Branquinho de Limão"
+  CREAM_CHEESE_FUDGE = "Branquinho de Cream Cheese"
+  PISTACHIO_CREAM = "Pistache"
+}
+
+enum Extras {
+  KINDER_BUENO = "Kinder Bueno"
+  NUTELLA = "Nutella"
+  STIKADINHO = "Stikadinho"
+  STRAWBERRY_JAM = "Geléia de Morango"
+  SALTED_CARAMEL = "Caramelo Salgado"
+  WHITE_CHOCOLATE_SHAVINGS = "Raspas de Chocolate Branco"
+  BLACK_CHOCOLATE_SHAVINGS = "Raspas de Chocolate Preto"
+}
+
+class BentoCake extends Cake{
+  slices = 4
+  packaging = PackageType.STYROFOAM
+  basePrice = 58.00
+  priceModifiers = {redVelvet: 5, pistache: 8, adicional: 8}
+}
+
+class MiniCake extends Cake {
+  slices = 6
+  packaging = PackageType.BOX_AND_CAKEBOARD
+  basePrice = 110.00
+  priceModifiers = {redVelvet: 5, pistache: 8, adicional: 8}
+}
+
+class FifteenSliceCake extends Cake {
+  slices = 15
+  packagaging = PackageType.BOX_AND_CAKEBOARD
+  basePrice = 160.00
+  priceModifiers = {redVelvet: 10, pistache: 14, adicional: 15}
+}
+
+class TwentyFiveSliceCake extends Cake {
+  slices = 25
+  packagaging = PackageType.BOX_AND_CAKEBOARD
+  basePrice = 240.00
+  priceModifiers = {redVelvet: 20, pistache: 24, adicional: 25}
+}
+/' 
+  Comum pra todos os tipos:
+    todos os bolos tem 1 massa (baunilha, chocolate, red velvet)
+    todos os bolos tem recheio (bento tem um só)
+    todos tem adicional (até 2 pra todos)
+ '/
+
+@enduml

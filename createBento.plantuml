@@ -1,0 +1,25 @@
+@startuml createBento
+title "Anotar Bentô cake"
+start
+:Escolher massa;
+if (Massa Red Velvet) then (sim)
+  #F5B7B1:adicional de 5.00;
+else (não)
+endif
+:Escolher recheio;
+if (Recheio de pistache) then (sim)
+  #F5B7B1:adicional de 8.00;
+else (não)
+endif
+:Escolher até 2 adicionais;
+if (Tem adicional) then (sim)
+  #F5B7B1:adicional de 8.00;
+  if (Tem segundo adicional) then (sim)
+    #F5B7B1:adicional de 8.00;
+  else (não)
+  endif
+else (não)
+endif
+:Preço final é calculado e exibido;
+stop
+@enduml

@@ -1,0 +1,25 @@
+ter dois campos no form pra capturar infos sobre decoração
+um text area pra descrição, outro input pro preço
+
+a ui vai determinar o tipo de bolo a ser criado, 
+já que é a primeira coisa que o usuário escolhe
+
+usar um serviço pra calcular o preço do adicional
+pra cada tipo de bolo (ex. red velvet é $5 pra bento e mini, $10 pra 15 fatias
+e $20 pra 25 fatias)
+
+Exemplo pra bento: 
+
+| Item                    | Condition   | Extra Cost |
+| ----------------------- | ----------- | ---------- |
+| Massa (dough)           | Red Velvet  | R\$5.00    |
+| Recheio (filling)       | Pistache    | R\$8.00    |
+| 1st Adicional (topping) | Any         | R\$8.00    |
+| 2nd Adicional (topping) | If selected | R\$8.00    |
+
+ideias de UI
+- react-native-calendars -> CalendarStrip, WeekCalendar
+- react-native-float-action ou react-native-paper -> FAB (floating action button)
+- weekly summary widget com quantidade de pedidos na semana | quantidade de dinheiros
+
+topping tem que mudar pra extra

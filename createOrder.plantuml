@@ -1,0 +1,13 @@
+@startuml createOrder
+title "Anotar pedido"
+start
+:Anotar dados do cliente;
+:Anotar data da retirada;
+:Anotar pedido segundo o tipo de bolo;
+if (Bentô) then
+elseif (Mini) then
+elseif (15 fatias) then
+elseif (25 fatias) then
+endif
+stop
+@enduml
