@@ -23,3 +23,5 @@ ideias de UI
 - weekly summary widget com quantidade de pedidos na semana | quantidade de dinheiros
 
 topping tem que mudar pra extra
+
+mudar pistache pra premium filling e red velvet pra premium dough
